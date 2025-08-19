@@ -1,0 +1,20 @@
+{
+  "name": "uc3",
+  "version": "1.0.0",
+  "description": "repositorio para uso de atividades",
+  "main": "resposta1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lenildo-Damasceno/UC3.git"
+  },
+  "keywords": [],
+  "author": "lenildo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lenildo-Damasceno/UC3/issues"
+  },
+  "homepage": "https://github.com/Lenildo-Damasceno/UC3#readme"
+}
