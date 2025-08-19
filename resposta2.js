@@ -13,3 +13,5 @@ console.log("Produto:", nomeProduto);
 console.log("Preço original: R$" + preco.toFixed(2));
 console.log("Desconto: R$" + valorDesconto.toFixed(2));
 console.log("Preço com desconto: R$" + precoFinal.toFixed(2));
+
+//pronto
