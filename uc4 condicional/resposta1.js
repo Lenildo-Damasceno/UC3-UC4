@@ -1,8 +1,8 @@
-const PromptSync = require("prompt-sync");
+import PromptSync from "prompt-sync";
 const prompt = PromptSync();
 
-let velocidade = parseFloat(prompt("Digite a velocidade do carro (em km/h): "));
-let limite = parseFloat(prompt("Digite a VELOCIDADE PERMITIDA: "));
+let velocidade = Number(prompt("Digite a velocidade do carro (em km/h): "));
+let limite = Number(prompt("Digite a VELOCIDADE PERMITIDA: "));
 
 if (velocidade > limite) {
     let excesso = velocidade - limite;
