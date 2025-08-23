@@ -1,7 +1,7 @@
 import PromptSync from "prompt-sync";
 const prompt = PromptSync();
 
-console.log("Para saber se você tem direito a algum benefício no transporte, digite as informações solicitadas.");
+console.log("SISTEMA DE TARIFA DE TRANSPORTE INTERMUNICIPAL");
 
 let idade = Number(prompt("Digite sua idade: "));
 let estudante = String(prompt("Você é estudante? (sim/não): ").toLowerCase());
