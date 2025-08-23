@@ -1,3 +1,3 @@
-repositorio para uso de atividades
+repositorio para uso de atividades da UC4
 
 
