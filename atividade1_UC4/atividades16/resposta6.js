@@ -28,4 +28,4 @@ console.log(
   `Caso o usuário queira aproveitamento, ele também pode comprar:
     ${latas} latas e ${galoes} galões.
     O preço final ficaria = R$${latas * 99 + galoes * 25}`
-);
+);// ok
