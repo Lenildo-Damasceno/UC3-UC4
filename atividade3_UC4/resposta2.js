@@ -37,8 +37,8 @@ if(num2 === 0 && opcao === 4) {
       console.log("Resultado: " + (num1 * num2));
       break;
     case 4:
-      console.log("Resultado: " + (num1 / num2));
-      break;
+    console.log("Resultado: " + (num1 / num2));
+    break;
     case 5:
       console.log("Resultado: " + Math.sqrt(num1));
       break;
