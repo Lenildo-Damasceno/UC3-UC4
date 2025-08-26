@@ -51,3 +51,4 @@ if (saque < minimo || saque > maximo) {
     console.log(`Valor restante não pode ser sacado: R$${resto}`); 
   }
 }
+//ATIVIDADE PRONTA
