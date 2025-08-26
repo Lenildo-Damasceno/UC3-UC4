@@ -6,6 +6,7 @@ console.log("SISTEMA DE TARIFA DE TRANSPORTE INTERMUNICIPAL");
 let idade = Number(prompt("Digite sua idade: "));
 let estudante = String(prompt("Você é estudante? (sim/não): ").toLowerCase());
 
+//aninhado
 if (idade <= 5) {
     console.log("Você tem direito à entrada gratuita.");
 } else if (idade >= 6 && idade <= 17) {
