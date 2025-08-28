@@ -1,5 +1,5 @@
 
-const salarioMensal = parseFloat(prompt("Digite o seu salário mensal: R$"));
+const salarioMensal = Number(prompt("Digite o seu salário mensal: R$"));
 let totalGastos = 0;
 let maiorGasto = 0;
 let diaMaiorGasto = 0;
