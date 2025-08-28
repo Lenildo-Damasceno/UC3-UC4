@@ -52,3 +52,4 @@ if (saldo >= 0) {
 
 console.log(`O dia de maior gasto foi o dia ${diaMaiorGasto}, com R$ ${maiorGasto.toFixed(2)}.`);
 console.log(`O dia de menor gasto foi o dia ${diaMenorGasto}, com R$ ${menorGasto.toFixed(2)}.`);
+//ok

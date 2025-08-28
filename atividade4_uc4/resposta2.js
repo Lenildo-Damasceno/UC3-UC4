@@ -13,4 +13,4 @@ for (let i = 1; i <= num; i++) {// ele só vai repetir ate a quantidade de numer
     a = b;
     b = proximoTermo;//soma do numero com anterior
 }
-//ok
+//ok 
