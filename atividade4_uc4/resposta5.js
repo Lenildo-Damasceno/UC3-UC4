@@ -8,12 +8,14 @@ let percentual = 1.5;
 console.log('Histórico Salarial do Funcionário');
 console.log(`Salário inicial: R$ ${SalarioInicial.toFixed(2)}`);
 
-for (let ano = 2010; ano <= 2025; ano++) {
+for (let ano = 2011; ano <= 2025; ano++) {
     if (ano > 2010) {
         SalarioAtual += SalarioAtual * (percentual / 100); // Aplica o aumento do ano
         percentual += 1.5; // Aumenta o percentual em 1.5 para o próximo ano
     }
-    // Calcula o percentual de aumento aplicado no ano atual.
+    /**
+     * Calcula o percentual a ser exibido, subtraindo 1.5 caso o ano seja superior a 2010.
+     * Isso ajusta o valor do percentual para anos mais recentes, aplicando uma redução específica.*/
     let percentualExibido = percentual - (ano > 2010 ? 1.5 : 0);
     console.log('-----------------------------');
     console.log(`Ano: ${ano}`);
