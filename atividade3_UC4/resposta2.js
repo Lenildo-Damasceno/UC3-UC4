@@ -49,3 +49,4 @@ if(num2 === 0 && opcao === 4) {
       console.log("Opção inválida.");
   }
 }
+  

@@ -41,3 +41,4 @@ switch (contador) {
         console.log('Inocente')
         break
 }
+  

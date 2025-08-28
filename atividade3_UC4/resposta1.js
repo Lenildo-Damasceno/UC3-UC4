@@ -43,3 +43,4 @@ console.log("- " + valorEmEuros.toFixed(2) + " EUROS");
 console.log("- " + valorEmLibras.toFixed(2) + " LIBRAS");
 console.log("- " + valorEmPesos.toFixed(2) + " PESOS");
 console.log("- " + valorEmFrancos.toFixed(2) + " FRANCOS");
+  
