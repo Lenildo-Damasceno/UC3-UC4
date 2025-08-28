@@ -26,5 +26,5 @@ if (quantidade === 0) {
     console.log(`Quantidade de produtos: ${quantidade}`);
     console.log(`Troco: R$ ${troco.toFixed(2)}`);
 }
-
+//ok
 
