@@ -14,8 +14,18 @@ do {
 
 //  número que o usuário digitou
 console.log(`Você digitou : ${num}`);
-console.log(num % 2 === 0 ? `${num} não é primo` : `${num} é primo`);
-console.log(`O número ${num} pode ser dividido por:`);
+function isPrime(n) {
+    if (n <= 1) return false;
+    if (n === 2) return true;
+    if (n % 2 === 0) return false;
+    for (let i = 3; i <= Math.sqrt(n); i += 2) {
+        if (n % i === 0) return false;
+    }
+    return true;
+}
+
+console.log(isPrime(num) ? `${num} é primo` : `${num} não é primo`);
+// Exibe os divisores do
 
 // Loop para encontrar e exibir todos os divisores do número digitado
 for (let i = 1; i <= num; i++) {

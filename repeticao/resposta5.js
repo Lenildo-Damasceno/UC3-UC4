@@ -10,7 +10,7 @@ console.log(`Salário inicial: R$ ${SalarioInicial.toFixed(2)}`);
 
 for (let ano = 2011; ano <= 2025; ano++) {
     if (ano > 2010) {
-        SalarioAtual += SalarioAtual * (percentual / 100); // Aplica o aumento do ano
+        SalarioAtual += SalarioAtual * (percentual / 100); // o valor será somado por ele mesmo e armazena na variavel
         percentual += 1.5; // Aumenta o percentual em 1.5 para o próximo ano
     }
     /**

@@ -25,3 +25,14 @@ while (!encontrado) {
         console.log(`O aluno(a) ${nomeBusca} não está na sala de aula. Tente novamente.`);
     }
 }
+console.log(`Nomes na sala de aula: ${alunos.join(", ")}`);
+console.log(`Total de ${alunos.length} nomes na sala de aula: ${alunos.join(", ")}`);
+
+//push: adiciona o elemento no final do array (valor)
+//Unshift: adiciona o elemento no início do array (valor)
+//pop: remove o último elemento do array (sem valor)
+//Shift: remove o primeiro elemento do array (sem valor)
+//splice: remove ou substitui um elemento pelo índice (índice, quantos remover, valor1, valor2, ...)
+//join: transforma o array em string, separando os elementos por um caractere especificado (caractere)
+//length: retorna o tamanho do array (sem valor)
+//indexOf: retorna o índice do primeiro elemento encontrado no array (valor)
