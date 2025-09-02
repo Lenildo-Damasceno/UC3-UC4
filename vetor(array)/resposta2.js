@@ -1,8 +1,6 @@
 import promptSync from 'prompt-sync';
 const prompt = promptSync();
-
-"use strict";
-
+// variaveis
 let consoantes = [];
 let vogais = [];
 
@@ -13,13 +11,13 @@ for (let i = 0; i < 15; i++) {
         letra = prompt(`Digite a ${i + 1}º letra : `).toLowerCase();
         if (!letra.match(/^[a-z]$/)) {
             console.log("Digite apenas uma letra (sem números ou símbolos)!");
-            
-        } // aqui as variaveis para armazenar consoantes e vogais
-    } while (!letra.match(/^[a-z]$/));
-    if (letra.match(/[aeiou]/)) {
+        }
+    } while (!letra.match(/^[a-z]$/)); //(/^[a-z]$/)); //expressão regular para validar se é letra
+    if (letra.match(/[aeiou]/)) {//verificando se é vogal ou consoante
         vogais.push(letra);
     } else {
         consoantes.push(letra);
     }
-}
-console.table({ "Vogais": vogais, "Consoantes": consoantes });
+} 
+console.log("FORAM LIDAS  A QUANTIDADE DE:", consoantes.length, "CONSOANTES"); //mostrando quantidade de consoantes
+console.log("AS CONSOANTES SÃO:", consoantes);

@@ -3,7 +3,7 @@
 // Vetores são úteis para guardar listas de números, nomes, objetos, etc.
 
 // Exemplo de vetor em JavaScript:
-let numeros = [10, 20, 30, 40, 50];
+//let numeros = [10, 20, 30, 40, 50];
 
 // Acessando elementos do vetor:
 console.log(numeros[0]); // Mostra 10
@@ -15,7 +15,7 @@ for (let i = 0; i < numeros.length; i++) {
 }
 
 // Exemplo 1: Somando todos os valores do vetor
-let soma = 0;
+//let soma = 0;
 for (let i = 0; i < numeros.length; i++) {
     soma += numeros[i];
 }

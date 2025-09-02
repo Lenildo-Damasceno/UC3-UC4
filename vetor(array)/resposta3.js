@@ -1,24 +1,24 @@
 import promptSync from 'prompt-sync';
 const prompt = promptSync();
-
-const nomesPessoas = [];
-const nomesdeComidas = [];
+//variaveis
+const turmaa = [];
+const turmab = [];
 let resultado = [];
+//entrada de dados
 
+console.log("===CADASTRO DE ALUNOS DA TURMA A E TURMA B===");
 for (let i = 0;  i < 10;i++){
-    nomesPessoas.push(prompt("Digite o nome de 10 Pessoas, digite o  nome da " + (i + 1) + "° : "));
+    turmaa.push(prompt("Digite o nome dos 10 Alunos da Turma A , O " + (i + 1) + "° : "));
 }
+//entrada de dados
 for (let j = 0; j < 10; j++)
-        {nomesdeComidas.push(prompt("Digite o nome de 10 Comidas, digite o  nome da " + (j + 1) + "° : "));}
-
-
-
+        {turmab.push(prompt("Digite os nomes dos 10 Alunos da Turma B, O " + (j + 1) + "° : "));}
 
 for (let i = 0; i < 10; i++) {
-    resultado.push(nomesPessoas[i] + " - " + nomesdeComidas[i]); //apenas concatenando os nomes
-}
-
-console.log("Lista intercalada de pessoas e comidas:");
-for (let i = 0; i < resultado.length; i++) {
-    console.log(resultado[i]);
-}
+    resultado.push(turmaa[i]) 
+    resultado.push(turmab[i])}
+//mostrando resultado
+console.log("NOMES DOS 20 ALUNOS DAS DUAS TURMAS :");
+console.log("ALUNOS DA TURMA A:", turmaa);
+console.log("ALUNOS DA TURMA B:", turmab);
+console.log("TODOS OS ALUNOS INTERCALADOS SÃO :", resultado);
