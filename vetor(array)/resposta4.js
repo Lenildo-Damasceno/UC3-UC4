@@ -1,5 +1,4 @@
-import promptSync from 'prompt-sync';
-const prompt = promptSync();
+
 
  let temperaturas = [];
  let soma = 0;
