@@ -5,7 +5,7 @@ let PalavrasOfencivas = [ "preto de merda", "preta de merda", "macaco", "macaca"
    "nega", "racinha", "escravo", "escrava", "viado", "bicha", "sapatão", "traveco", "queima rosca", "boiola", 
    "baiano preguiçoso", "paraíba", "gringo de merda", "macumbeiro", "macumbeira", "crente fanático", "matar", 
    "estuprar", "agredir", "bater em", "linchar", "fuzilar", "esfaquear", "desmembrar", "quero que morra", 
-   "tem que apanhar",  "putaria", "buceta", "caralho", "merda", "bosta",
+   "tem que apanhar",  "putaria", "buceta", "caralho", "merda", "bosta", "droga", 
    "nudes", "sexo explícito",  "gordo baleia", "gorda baleia", "retardado", "retardada", "idiota", "imbecil", 
    "trouxa", "corno", "corna", "puta", "puto", "vagabunda", "vagabundo", "seu lixo", "inútil"];
 
@@ -31,5 +31,6 @@ for (let i = 0; i < palavras.length; i++) {
 
  console.log("\n seu texto original é:", textoOriginal);
  console.log("\n TEXTO CORRIGIDO:", novoArrayDePalavras.join(" "));
- console.log("\n nquantidade de ofensas:", contadordeOfencivas);
+ console.log("\n quantidade de ofensas:", contadordeOfencivas);
 
+//ok
