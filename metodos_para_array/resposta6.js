@@ -1,44 +1,30 @@
-const promptSync = require('prompt-sync');
-const prompt = promptSync();
+import promptSync from "prompt-sync";
+const prompt = promptSync()
 
-const senhas = 
-[
-    "senha123",
-    "Hscgcwa65Z!UM#",
-    "12345678",
-    "visitante",
-    "SX%W0DU5Me%ga",
-    "afQMjmZO",
-    "lmshbpuwbt",
-    "xzoydkbnhv",
-    "!BM67ARzQhq",
-    "OcpYWAqQ",
-    "zRGho8#wf2U1",
-    "pDUbegaO",
-    "jQaPNmC5",
-    "migooafhxx",
-    "0l2g@bT5PNgv"
-  ]
-
-  // Exemplo de caracteres especiais
-  const caractererespecial = "!@#$%";
-  console.log(senhas);
-  for (let i = 0; i < senhas.length; i++) {
-    let teste = senhas[i].split('');
-    let temespecial = false;
-    let temmaiuscula = false;
-    let temnumero = false;
-    for (let j = 0; j < teste.length; j++) {
-      if (caractererespecial.includes(teste[j])) {
-        temespecial = true;
-      }
-      if (teste[j] >= 'A' && teste[j] <= 'Z') {
-        temmaiuscula = true;
-      }
-      if (teste[j] >= '0' && teste[j] <= '9') {
-        temnumero = true;
-      }
+const senhas = [
+    'Segredo#789',    
+    'ChaveSegura',
+    'Acesso_F1l',      
+    '123456',
+    'chavefacil',
+    'ACESSODENIED',
+    'MinhaChave1#',
+    'VALOR!',
+    'Ac3sso@'
+];
+console.log(senhas);
+const especiais = ['@', '#', '!', '%']
+senhas.forEach((senha, i) => { // percorro o array de senhas e meu paramentro inicial é cada 'SENHA' e sei indice (i)
+    let teste = senha.split('') // 'teste' irá receber o um array da 'senha' atual fracionada
+    let temNumero = teste.some(caract => !isNaN(caract)) // peço para percorrer cada caracter e ver se tem algum número (retorna booleano)
+    let temMAIUSCULA = teste.some(caract => caract !== caract.toLowerCase()) // percorro o array e teste se existe algum caracter diferente dele mesmo em minusculo
+    let temEspecial = teste.some(caract => especiais.includes(caract)) // percorro o array e vejo se algum dos caracteres especiais fazem parte desse caracter 
+    if(temNumero == true && temMAIUSCULA == true && temEspecial == true){
+        senhas[i] = `${senha} = SENHA FORTE <--` // se todos forem verdade, a senha atende os critérios
+    }  
+    else{
+        senhas[i] = `${senha} = SENHA FRACA (X)`
     }
+});
 
-    console.log(`Senha: ${senhas[i]}, Especial: ${temespecial}, Maiúscula: ${temmaiuscula}, Número: ${temnumero}`);
-  }
+console.log(`[===== SENHAS =====]\n${senhas.join('\n')}`);
