@@ -1,73 +1,51 @@
-import promptSync from 'prompt-sync';
-const prompt = promptSync();
+import PromptSync from "prompt-sync" // Importe do prompt
+const prompt = PromptSync() // variavel do prompt
 
-const produtos = [
-  { nome: "Camiseta Básica" },
-  { nome: "Calça Jeans" },
-  { nome: "Tênis Esportivo" },
-  { nome: "Relógio Digital" },
-  { nome: "Fone de Ouvido Bluetooth" },
-  { nome: "Notebook 16GB" },
-  { nome: "Smartphone 128GB" },
-  { nome: "Mochila Escolar" },
-  { nome: "Livro de Ficção" },
-  { nome: "Cadeira Gamer" },
-  { nome: "Mouse Sem Fio" },
-  { nome: "Teclado Mecânico" },
-  { nome: "Monitor 24\"" },
-  { nome: "Impressora Multifuncional" },
-  { nome: "Bicicleta Aro 29" },
-  { nome: "Cafeteira Elétrica" },
-  { nome: "Ventilador de Mesa" },
-  { nome: "Churrasqueira Elétrica" },
-  { nome: "Aspirador de Pó" }
-]
+let brindes=['chaveiro','adesivo','boné']
+let carrinhocompra=['biscoito','macarrao','feijao','cuscuz','farinha']//array com os produtos do carrinho
+let promocao = 'biscoito'
+let qtditens // varial para receber a quantidade de itens para aparecer
+let itenremovido
+let carrinhonovo = []
+let indice
+let indicepromo
+let carbrinde=[]
+let contadorb, contadorc
+// itens do carrinho original
+console.log(carrinhocompra)
+// solicita e receber o valor da quantidade
+qtditens = Number (prompt("Quantos itens deseja que apareça em seu carrinho ? "))
+// Itens que ficou após escolher a quantidade
+console.log("Itens do carrinho:")
+//carrinhonovo receber carrinhocompra após receber o valor da quantidade final
+carrinhonovo = carrinhocompra.slice(0, qtditens)
 
+console.log(carrinhonovo)
 
-let TodosProdutos = produtos.map(p => p.nome).toString(); // convertendo array em string
-console.log("CATALOGO: " + TodosProdutos, "\n");
+itenremovido = prompt("Qual item deseja retira do carrinho ?")
+indice = carrinhonovo.indexOf(itenremovido)
 
-console.log("===Bem vindo a loja de produtos===");
-console.log(" quantos produtos deseja adicionar ao carrinho? (maximo 5 produtos) ");
-let quantidade = parseInt(prompt("Digite a quantidade de produtos que deseja adicionar ao carrinho: "));
+//verificar o indice, se ele for maior que -1 significa que foi encontrado o elemnto dentro
+if(indice > -1){
+    carrinhonovo.splice(indice,1)
+}
+//mostra o carrinho já atualizado
+console.log(carrinhonovo)
 
-// Validação da quantidade
-if (isNaN(quantidade) || quantidade < 1 || quantidade > 5) {
-  console.log("Quantidade inválida. Por favor, escolha entre 1 e 5 produtos.");
-  process.exit(1);
+indicepromo = carrinhonovo.indexOf('biscoito')
+
+console.log("indice do iten em promoção",indicepromo) // indice do item em promoção
+
+if(indicepromo > -1){
+    console.log("Na sua lista possuir um produto em promoção, esse item é: ",promocao)
 }
 
-// Adicionando produtos ao carrinho
-let carrinho = [];
-for (let i = 0; i < quantidade; i++) {
-  let produtoNome = prompt(`Digite o nome do produto #${i + 1}: `);
-  let produtoEncontrado = produtos.find(p => p.nome.toLowerCase() === produtoNome.toLowerCase());
-  if (produtoEncontrado) {
-    carrinho.push(produtoEncontrado);
-  } else {
-    console.log(`Produto "${produtoNome}" não encontrado. Tente novamente.`);
-    i--; // repete a iteração
-  }
+
+for(contadorb = 0; contadorb < carrinhonovo.length; contadorb = contadorb + 1){
+    carbrinde.push(carrinhonovo[contadorb])
+}
+for(contadorc = 0; contadorc < brindes.length; contadorc = contadorc + 1){
+    carbrinde.push(brindes[contadorc])
 }
 
-console.log("Produtos no carrinho:");
-carrinho.forEach((p, idx) => console.log(`${idx + 1}. ${p.nome}`));
-
-// Remover produto do carrinho
-if (carrinho.length > 0) {
-  let remover = prompt("Deseja remover algum produto do carrinho? (s/n): ");
-  if (remover.toLowerCase() === 's') {
-    carrinho.forEach((p, idx) => console.log(`${idx + 1}. ${p.nome}`));
-    let idxRemover = parseInt(prompt("Digite o número do produto que deseja remover: "));
-    if (!isNaN(idxRemover) && idxRemover >= 1 && idxRemover <= carrinho.length) {
-      let removido = carrinho.splice(idxRemover - 1, 1);
-      console.log(`Produto removido: ${removido[0].nome}`);
-    } else {
-      console.log("Número inválido.");
-    }
-  }
-}
-
-console.log("Carrinho final:");
-carrinho.forEach((p, idx) => console.log(`${idx + 1}. ${p.nome}`));
-
+console.log(carbrinde)
