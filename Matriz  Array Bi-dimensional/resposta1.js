@@ -1,55 +1,101 @@
 import PromptSync from "prompt-sync"
 const prompt = PromptSync()
 
-let Linhasemana = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"
+let Linhasemana = ["Domingo", "Segunda", "Terca", "Quarta", "Quinta", "Sexta", "Sábado"
 ]
  let colunaCafeAlmocoJanta = ['cafe','almoco', 'jantar']
 
- let cardapio = [
-    [ "Tapioca com queijo coalho e café", "Frango grelhado com arroz, feijão, e salada de folhas verdes", "Sopa de legumes com crôutons"],
-    [ "Pão na chapa com requeijão e suco de laranja", "Carne de panela com purê de batata e cenouras cozidas", "Omelete com queijo e tomate, acompanhado de salada"],
-    [ "Cuscuz com ovo e manteiga da terra", "Peixe assado com batatas e brócolis ao vapor", "Panquecas de frango desfiado com molho de tomate"],
-    [ "Iogurte natural com granola e frutas picadas", "Bife acebolado com arroz, feijão e farofa", "Torta salgada de liquidificador (frango ou legumes)"],
-    [ "Vitamina de abacate com aveia", "Lasanha à bolonhesa com salada de rúcula", "Espetinho de carne e legumes (kafta) com vinagrete"],
-    [ "Bolo de milho com café com leite", "Feijoada leve com arroz, couve refogada e laranja", "Pizza caseira de diversos sabores"],
-    [ "Pão de queijo caseiro e suco de goiaba", "Macarronada de domingo com almôndegas ao sugo", "Sanduíche natural de frango ou atum no pão integral"]
-  ]
+let cardapio = [
+    ["Tapioca queijo", "Frango arroz", "Sopa legumes"],
+    ["Pão requeijão", "Carne purê", "Omelete queijo"],
+    ["Cuscuz ovo", "Peixe batata", "Panqueca frango"],
+    ["Iogurte granola", "Bife arroz", "Torta frango"],
+    ["Vitamina aveia", "Lasanha salada", "Espetinho carne"],
+    ["Bolo milho", "Feijoada arroz", "Pizza caseira"],
+    ["Pão queijo", "Macarrão almôndega", "Sanduíche frango"]
+]
 
-  let diadebusca = prompt(" DIGITE DIA DE BUSCA")
-  let turno = prompt ('DIGA SE É CAFE , ALMOÇO , JANTA')
+let encerrar = false;
 
- let protaencotrado = cardapio[Linhasemana.indexOf(diadebusca)][colunaCafeAlmocoJanta.indexOf (turno)]
+while (!encerrar) {
+    const opcao = prompt(`
+    --- GERENCIADOR DE CARDÁPIO ---
+    Linhas: Dias da Semana | Colunas: Refeições
 
-  console.log ('o prato é', protaencotrado)
+    1 - Consultar prato
+    2 - Alterar prato
+    3 - Ver cardápio completo (no console)
+    4 - Sair
 
+    Digite a sua opção:
+    `);
 
-  console.table(cardapio)
+    switch (opcao) {
+        case "1": {
+            const diaEscolhido = prompt("Consulta: Digite o dia da semana (linha):");
+            const refeicaoEscolhida = prompt("Consulta: Digite a refeição (coluna):");
 
-  
+            const indiceDia = Linhasemana.findIndex(d => d.toLowerCase() === diaEscolhido.toLowerCase().trim());
+            const indiceRefeicao = colunaCafeAlmocoJanta.findIndex(r => r.toLowerCase() === refeicaoEscolhida.toLowerCase().trim());
 
+            if (indiceDia !== -1 && indiceRefeicao !== -1) {
+                console.log(`Prato: ${cardapio[indiceDia][indiceRefeicao]}`);
+            } else {
+                console.log("Dia ou refeição inválido.");
+            }
+            break;
+        }
 
+        case "2": {
+            const diaEscolhido = prompt("Alterar: Digite o dia da semana (linha):");
+            const refeicaoEscolhida = prompt("Alterar: Digite a refeição (coluna):");
 
+            const indiceDia = Linhasemana.findIndex(d => d.toLowerCase() === diaEscolhido.toLowerCase().trim());
+            const indiceRefeicao = colunaCafeAlmocoJanta.findIndex(r => r.toLowerCase() === refeicaoEscolhida.toLowerCase().trim());
 
-// let matriz = []
+            if (indiceDia !== -1 && indiceRefeicao !== -1) {
+                const novoPrato = prompt(`O prato atual é "${cardapio[indiceDia][indiceRefeicao]}".\nDigite o novo prato:`);
+                if (novoPrato && novoPrato.trim() !== "") {
+                    cardapio[indiceDia][indiceRefeicao] = novoPrato.trim();
+                    console.log("Prato alterado com sucesso!");
+                } else {
+                    console.log("Alteração cancelada.");
+                }
+            } else {
+                console.log("Dia ou refeição inválido.");
+            }
+            break;
+        }
 
-// let linha = Number(prompt('Digite a quantidade de linhas: '))
-// let coluna = Number(prompt('Digite a quantidade de coluna: '))
+        case "3": {
+            console.log("--- CARDÁPIO COMPLETO - PANELA DE VÓ ---");
+            
+            const cardapioParaTabela = {};
+            for(let i = 0; i < Linhasemana.length; i++) {
+                cardapioParaTabela[Linhasemana[i]] = {
+                    'Café': cardapio[i][0],
+                    'Almoço': cardapio[i][1],
+                    'Jantar': cardapio[i][2]
+                };
+            }
+            console.table(cardapioParaTabela);
 
-// for(let l = 0; l < linha; l++){//linha -  elementos
-//     matriz[l] = []
-//     for(let c = 0; c < coluna; c++){ // colunas - os valores de cada elemento/linha
-//         matriz[l].push(Number(prompt('Digite um valor: ')))
-//         //matriz[l][c]
-//     }
-// }
+            console.log("Cardápio exibido no console em formato de tabela.");
+            break;
+        }
 
-// console.log(matriz)
-// matriz[1].splice(matriz[1].indexOf(3),1) // matriz[1].splice(0,1) Remove um valor do 2º elemento de acordo com índice específico
-// console.log(matriz)
-// matriz.pop() // remove o último elemento
-// console.log(matriz)
-// matriz[0].shift() // remove o 1º valor do 1º elemento
-// console.log(matriz)
+        case "4": {
+            encerrar = true;
+            break;
+        }
+
+        default: {
+            console.log("Opção inválida.");
+            break;
+        }
+    }
+}
+
 
 
 
