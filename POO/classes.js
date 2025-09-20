@@ -34,5 +34,15 @@ class Pessoa {
         this.altura = prompt("Digite a altura da pessoa: ");
         this.raca = prompt("Digite a raça da pessoa: ");
         console.log(`Nome: ${this.nome}, Altura: ${this.altura}, Raça: ${this.raca}`);
+    } //metodo para alterar o nome
+    alterarnome (sobrenome){
+        this.nome = this.nome + " " + sobrenome
+    }
+    
+
+    coletarDados() {
+        this.nome = prompt("Digite o nome da pessoa: ");
+        this.altura = prompt("Digite a altura da pessoa: ");
+        this.raca = prompt("Digite a raça da pessoa: ");
     }
 }
