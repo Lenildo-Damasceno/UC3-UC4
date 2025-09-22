@@ -20,6 +20,18 @@ carro.placa = prompt("Digite a placa do carro: ");
 carro.numPorta = prompt("Digite o número de portas do carro: ");
 carro.imprimir();
 
+
+
+
+
+
+
+
+
+
+
+
+
 class Pessoa {
     // atributos
     constructor(nome, altura, raca) {
