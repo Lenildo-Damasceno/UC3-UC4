@@ -176,4 +176,42 @@ get resolucao() {
     }
 }
 //FIMDACLASSE
+class Computador {
+    #marca
+    #modelo
+     constructor(marca,modelo, processador, memoria, armazenamento, tela) {
+        this.#marca = marca;
+        this.#modelo = modelo;
+        this.Memoria = memoria;
+        this.Processador = processador;
+        this.Armazenamento = armazenamento;
+        this.Tela = tela;
+     }
+        set marca(novaMarca) {
+            this.#marca = novaMarca;
+        }
+        get marca() {
+            return this.#marca;
+        }
 
+        set modelo(novoModelo) {
+            this.#modelo = novoModelo;
+        }
+        get modelo() {
+            return this.#modelo;
+        }
+
+        imprimirFichatecnica() {
+            console.log("--- Especificações do Computador ---");
+            console.log(this.processador.descrever());
+            console.log(this.memoria.descrever());
+            console.log(this.armazenamento.descrever());
+            console.log(this.tela.descrever());
+            console.log("------------------------------------"); }
+        instalarSoftWare (nome){
+
+
+
+
+        }
+} //FIMDACLASSE
